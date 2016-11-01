@@ -1,5 +1,5 @@
 //
-//  ContentViewController.swift
+//  ExpandedViewController.swift
 //  VoteApp
 //
 //  Created by Ellina Kuznecova on 01.11.16.
@@ -8,12 +8,18 @@
 
 import UIKit
 
-class ContentViewController: UIViewController {
+class ExpandedViewController: UIViewController {
     @IBOutlet weak var pollVariantTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addNewVariant: UIButton!
     
     var data: [String] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.changeViewsState(to: self.data.count == 0)
+    }
     
     @IBAction func addNewVariantPressed(_ sender: AnyObject) {
         self.changeViewsState(to: true)
@@ -35,7 +41,7 @@ class ContentViewController: UIViewController {
     }
 }
 
-extension ContentViewController: UITableViewDataSource {
+extension ExpandedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count

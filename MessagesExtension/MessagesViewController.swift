@@ -25,8 +25,12 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     private func presentVC(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: "ContentVC") as? ContentViewController else {
-            fatalError("Can't instantiate ContentViewController")
+        let controller: UIViewController
+        
+        if presentationStyle == .compact {
+            controller = instantiateCompactVC()
+        } else {
+            controller = instantiateExpandedVC()
         }
         
         // Remove any existing child controllers.
@@ -45,10 +49,32 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.didMove(toParentViewController: self)
     }
     
+    private func instantiateCompactVC() -> UIViewController {
+        guard let compactVC = storyboard?.instantiateViewController(withIdentifier: "CompactVC") as? CompactViewController else {
+            fatalError("Can't instantiate CompactViewController")
+        }
+        compactVC.delegate = self
+        return compactVC
+    }
+    
+    private func instantiateExpandedVC() -> UIViewController {
+        guard let expandedVC = storyboard?.instantiateViewController(withIdentifier: "ExpandedVC") as? ExpandedViewController else {
+            fatalError("Can't instantiate ExpandedViewController")
+        }
+        
+        return expandedVC
+    }
+    
     private func isSenderSameAsRecipient() -> Bool {
         guard let conversation = activeConversation else { return false }
         guard let message = conversation.selectedMessage else { return false }
         
         return message.senderParticipantIdentifier == conversation.localParticipantIdentifier
+    }
+}
+
+extension MessagesViewController: CompactViewControllerDelegate {
+    func createPollPressed() {
+        self.requestPresentationStyle(.expanded)
     }
 }
