@@ -10,12 +10,27 @@ import UIKit
 
 protocol CompactViewControllerDelegate: class {
     func createPollPressed()
+    func sendMessage()
 }
 
 class CompactViewController: UIViewController {
+    @IBOutlet weak var actionButton: UIButton!
+    
+    var variants: [String] = []
     weak var delegate: CompactViewControllerDelegate?
     
-    @IBAction func createPoll(_ sender: AnyObject) {
-        self.delegate?.createPollPressed()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let actionButtonTitle = self.variants.count > 0 ? "Send Poll" : "Create Poll"
+        self.actionButton.setTitle(actionButtonTitle, for: .normal)
+    }
+    
+    @IBAction func actionButtonPressed(_ sender: AnyObject) {
+        if self.variants.count > 0 {
+            self.delegate?.sendMessage()
+        } else {
+            self.delegate?.createPollPressed()
+        }
     }
 }

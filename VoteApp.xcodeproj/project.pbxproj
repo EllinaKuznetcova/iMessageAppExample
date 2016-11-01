@@ -108,8 +108,8 @@
 			children = (
 				DCB5F9FE1DC8C70F0030FC43 /* MessagesViewController.swift */,
 				DCB5FA001DC8C70F0030FC43 /* MainInterface.storyboard */,
-				DCB5FA0F1DC8CE5D0030FC43 /* ExpandedViewController.swift */,
 				DCB5FA131DC8E7DE0030FC43 /* CompactViewController.swift */,
+				DCB5FA0F1DC8CE5D0030FC43 /* ExpandedViewController.swift */,
 				DCB5FA031DC8C70F0030FC43 /* Assets.xcassets */,
 				DCB5FA051DC8C70F0030FC43 /* Info.plist */,
 			);

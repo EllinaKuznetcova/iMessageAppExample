@@ -114,7 +114,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43V-Fb-fDJ">
                                 <state key="normal" title="Create Poll"/>
                                 <connections>
-                                    <action selector="createPoll:" destination="WPR-hO-rLV" eventType="touchUpInside" id="2V6-cO-Rth"/>
+                                    <action selector="actionButtonPressed:" destination="WPR-hO-rLV" eventType="touchUpInside" id="GMn-vu-bdZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,6 +124,9 @@
                             <constraint firstItem="43V-Fb-fDJ" firstAttribute="centerY" secondItem="UJi-pV-kpd" secondAttribute="centerY" id="C3H-zy-mT3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="actionButton" destination="43V-Fb-fDJ" id="7z4-4H-ebC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zg6-AW-cGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

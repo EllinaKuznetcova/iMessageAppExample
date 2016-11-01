@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol ExpandedViewControllerDelegate: class {
+    func variantsUpdated(variants: [String])
+}
+
 class ExpandedViewController: UIViewController {
     @IBOutlet weak var pollVariantTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addNewVariant: UIButton!
     
+    weak var delegate: ExpandedViewControllerDelegate?
     var data: [String] = []
     
     override func viewDidLoad() {
@@ -26,8 +31,11 @@ class ExpandedViewController: UIViewController {
     }
     
     @IBAction func savePressed(_ sender: AnyObject) {
-        self.data.append(self.pollVariantTextField.text!)
+        guard let text = self.pollVariantTextField.text, text != "" else {return}
+        self.data.append(text)
+        self.pollVariantTextField.text = ""
         self.tableView.reloadData()
+        self.delegate?.variantsUpdated(variants: self.data)
         self.changeViewsState(to: false)
     }
     

@@ -10,6 +10,9 @@ import UIKit
 import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
+    
+    var variants: [String] = []
+        
     override func willBecomeActive(with conversation: MSConversation) {
         super.willBecomeActive(with: conversation)
         
@@ -54,6 +57,7 @@ class MessagesViewController: MSMessagesAppViewController {
             fatalError("Can't instantiate CompactViewController")
         }
         compactVC.delegate = self
+        compactVC.variants = self.variants
         return compactVC
     }
     
@@ -61,7 +65,7 @@ class MessagesViewController: MSMessagesAppViewController {
         guard let expandedVC = storyboard?.instantiateViewController(withIdentifier: "ExpandedVC") as? ExpandedViewController else {
             fatalError("Can't instantiate ExpandedViewController")
         }
-        
+        expandedVC.delegate = self
         return expandedVC
     }
     
@@ -76,5 +80,35 @@ class MessagesViewController: MSMessagesAppViewController {
 extension MessagesViewController: CompactViewControllerDelegate {
     func createPollPressed() {
         self.requestPresentationStyle(.expanded)
+    }
+    
+    func sendMessage() {
+        guard let conversation = activeConversation else { fatalError("Expected a conversation") }
+        // Create a new message with the same session as any currently selected message.
+        let message = composeMessage(with: "I created new poll!", session: conversation.selectedMessage?.session)
+        
+        // Add the message to the conversation.
+        conversation.insert(message) { error in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
+    
+    fileprivate func composeMessage(with caption: String, session: MSSession? = nil) -> MSMessage {
+        
+        let layout = MSMessageTemplateLayout()
+        layout.caption = caption
+        
+        let message = MSMessage(session: session ?? MSSession())
+        message.layout = layout
+        
+        return message
+    }
+}
+
+extension MessagesViewController: ExpandedViewControllerDelegate {
+    func variantsUpdated(variants: [String]) {
+        self.variants = variants
     }
 }
