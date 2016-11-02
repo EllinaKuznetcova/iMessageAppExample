@@ -61,3 +61,11 @@ extension ExpandedViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension ExpandedViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        self.savePressed(self)
+        return true
+    }
+}
