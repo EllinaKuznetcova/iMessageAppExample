@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DF44B274E82324DE497DF78 /* Pods_Abstract_VoteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359D4F28F0B8BCE76DDC1803 /* Pods_Abstract_VoteApp.framework */; };
+		DC5635A91DCE297300E4840B /* PollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5635A81DCE297300E4840B /* PollEntity.swift */; };
 		DCB5F9F01DC8C70F0030FC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F9EF1DC8C70F0030FC43 /* Assets.xcassets */; };
 		DCB5F9F71DC8C70F0030FC43 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DCB5F9F61DC8C70F0030FC43 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DCB5F9FC1DC8C70F0030FC43 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB5F9FB1DC8C70F0030FC43 /* Messages.framework */; };
@@ -15,6 +17,7 @@
 		DCB5FA041DC8C70F0030FC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCB5FA031DC8C70F0030FC43 /* Assets.xcassets */; };
 		DCB5FA101DC8CE5D0030FC43 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB5FA0F1DC8CE5D0030FC43 /* ExpandedViewController.swift */; };
 		DCB5FA141DC8E7DE0030FC43 /* CompactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB5FA131DC8E7DE0030FC43 /* CompactViewController.swift */; };
+		EA376D82A9B7248C3C111996 /* Pods_Abstract_MessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD39F780FC2CA69347CB1C2 /* Pods_Abstract_MessagesExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		32424C6FA93C9B93C60A587E /* Pods-Abstract-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-MessagesExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-MessagesExtension/Pods-Abstract-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
+		359D4F28F0B8BCE76DDC1803 /* Pods_Abstract_VoteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_VoteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E986ACCC82778BE3DDFDAAE /* Pods-Abstract-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-MessagesExtension/Pods-Abstract-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		5CD39F780FC2CA69347CB1C2 /* Pods_Abstract_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_MessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB6646EA54790B6C0F12530 /* Pods-Abstract-VoteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-VoteApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-VoteApp/Pods-Abstract-VoteApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DC5635A81DCE297300E4840B /* PollEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollEntity.swift; sourceTree = "<group>"; };
 		DCB5F9EC1DC8C70F0030FC43 /* VoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB5F9EF1DC8C70F0030FC43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCB5F9F11DC8C70F0030FC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,20 +62,41 @@
 		DCB5FA051DC8C70F0030FC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCB5FA0F1DC8CE5D0030FC43 /* ExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
 		DCB5FA131DC8E7DE0030FC43 /* CompactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactViewController.swift; sourceTree = "<group>"; };
+		E2B350645C3A478E2B8E108B /* Pods-Abstract-VoteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-VoteApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-VoteApp/Pods-Abstract-VoteApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BAA38EB0F70FDA81D8F41C57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DF44B274E82324DE497DF78 /* Pods_Abstract_VoteApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCB5F9F31DC8C70F0030FC43 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DCB5F9FC1DC8C70F0030FC43 /* Messages.framework in Frameworks */,
+				EA376D82A9B7248C3C111996 /* Pods_Abstract_MessagesExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		353742FEB9D1C88F4C99DA38 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E986ACCC82778BE3DDFDAAE /* Pods-Abstract-MessagesExtension.debug.xcconfig */,
+				32424C6FA93C9B93C60A587E /* Pods-Abstract-MessagesExtension.release.xcconfig */,
+				8BB6646EA54790B6C0F12530 /* Pods-Abstract-VoteApp.debug.xcconfig */,
+				E2B350645C3A478E2B8E108B /* Pods-Abstract-VoteApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DCB5F9E51DC8C70F0030FC43 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +104,7 @@
 				DCB5F9FD1DC8C70F0030FC43 /* MessagesExtension */,
 				DCB5F9FA1DC8C70F0030FC43 /* Frameworks */,
 				DCB5F9ED1DC8C70F0030FC43 /* Products */,
+				353742FEB9D1C88F4C99DA38 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				DCB5F9FB1DC8C70F0030FC43 /* Messages.framework */,
+				5CD39F780FC2CA69347CB1C2 /* Pods_Abstract_MessagesExtension.framework */,
+				359D4F28F0B8BCE76DDC1803 /* Pods_Abstract_VoteApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,6 +143,7 @@
 				DCB5FA001DC8C70F0030FC43 /* MainInterface.storyboard */,
 				DCB5FA131DC8E7DE0030FC43 /* CompactViewController.swift */,
 				DCB5FA0F1DC8CE5D0030FC43 /* ExpandedViewController.swift */,
+				DC5635A81DCE297300E4840B /* PollEntity.swift */,
 				DCB5FA031DC8C70F0030FC43 /* Assets.xcassets */,
 				DCB5FA051DC8C70F0030FC43 /* Info.plist */,
 			);
@@ -123,8 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCB5FA0C1DC8C70F0030FC43 /* Build configuration list for PBXNativeTarget "VoteApp" */;
 			buildPhases = (
+				1D9F47DD329150B4DE225340 /* [CP] Check Pods Manifest.lock */,
 				DCB5F9EA1DC8C70F0030FC43 /* Resources */,
 				DCB5FA0B1DC8C70F0030FC43 /* Embed App Extensions */,
+				BAA38EB0F70FDA81D8F41C57 /* Frameworks */,
+				6069AF35BB210E780CCEDEDC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCB5FA081DC8C70F0030FC43 /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
 			buildPhases = (
+				8BF6A18D5DABDA37951090DE /* [CP] Check Pods Manifest.lock */,
 				DCB5F9F21DC8C70F0030FC43 /* Sources */,
 				DCB5F9F31DC8C70F0030FC43 /* Frameworks */,
 				DCB5F9F41DC8C70F0030FC43 /* Resources */,
+				B984A87F17220FF5497BDB03 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +253,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D9F47DD329150B4DE225340 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6069AF35BB210E780CCEDEDC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-VoteApp/Pods-Abstract-VoteApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BF6A18D5DABDA37951090DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B984A87F17220FF5497BDB03 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-MessagesExtension/Pods-Abstract-MessagesExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DCB5F9F21DC8C70F0030FC43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -222,6 +324,7 @@
 				DCB5FA141DC8E7DE0030FC43 /* CompactViewController.swift in Sources */,
 				DCB5F9FF1DC8C70F0030FC43 /* MessagesViewController.swift in Sources */,
 				DCB5FA101DC8CE5D0030FC43 /* ExpandedViewController.swift in Sources */,
+				DC5635A91DCE297300E4840B /* PollEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +443,7 @@
 		};
 		DCB5FA091DC8C70F0030FC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E986ACCC82778BE3DDFDAAE /* Pods-Abstract-MessagesExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEVELOPMENT_TEAM = C9ZJ96D59R;
@@ -354,6 +458,7 @@
 		};
 		DCB5FA0A1DC8C70F0030FC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32424C6FA93C9B93C60A587E /* Pods-Abstract-MessagesExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEVELOPMENT_TEAM = C9ZJ96D59R;
@@ -368,6 +473,7 @@
 		};
 		DCB5FA0D1DC8C70F0030FC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BB6646EA54790B6C0F12530 /* Pods-Abstract-VoteApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -385,6 +491,7 @@
 		};
 		DCB5FA0E1DC8C70F0030FC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2B350645C3A478E2B8E108B /* Pods-Abstract-VoteApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
