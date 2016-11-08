@@ -18,6 +18,15 @@ struct PollEntity {
     var options: [PollOption]
     var creatorId: String
     
+    var queryItems: [URLQueryItem] {
+        return [URLQueryItem(name: PollEntity.entityKey, value: self.toJSONString())]
+    }
+    
+    init(creatorId: String) {
+        self.creatorId = creatorId
+        self.options = []
+    }
+    
     init?(message: MSMessage?) {
         guard let messageURL = message?.url else { return nil }
         guard let urlComponents = NSURLComponents(url: messageURL, resolvingAgainstBaseURL: false), let queryItems = urlComponents.queryItems else { return nil }
@@ -32,8 +41,10 @@ struct PollEntity {
     init?(queryItems: [URLQueryItem]) {
         guard let queryItem = queryItems.first,
             let value = queryItem.value,
-            queryItem.name == PollEntity.entityKey,
-            let decodedObject = Mapper<PollEntity>().map(JSONString: value) else { return nil }
+            queryItem.name == PollEntity.entityKey else { return nil }
+        var decodedObject = PollEntity(creatorId: "")
+        decodedObject = Mapper<PollEntity>().map(JSONString: value, toObject: decodedObject)
+        guard decodedObject.creatorId != "" else {return nil}
         self.creatorId = decodedObject.creatorId
         self.options = decodedObject.options
     }

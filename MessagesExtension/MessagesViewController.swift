@@ -11,11 +11,12 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
-    var variants: [String] = []
+    var poll: PollEntity!
         
     override func willBecomeActive(with conversation: MSConversation) {
         super.willBecomeActive(with: conversation)
         
+        self.poll = PollEntity(message: conversation.selectedMessage) ?? PollEntity(creatorId: conversation.localParticipantIdentifier.uuidString)
         presentVC(for: conversation, with: presentationStyle)
     }
     
@@ -23,7 +24,9 @@ class MessagesViewController: MSMessagesAppViewController {
         guard let conversation = activeConversation else {
             fatalError("Expected the active conversation")
         }
-        
+        if let _ = conversation.selectedMessage {
+            self.poll = PollEntity(message: conversation.selectedMessage)
+        }
         presentVC(for: conversation, with: presentationStyle)
     }
     
@@ -57,7 +60,7 @@ class MessagesViewController: MSMessagesAppViewController {
             fatalError("Can't instantiate CompactViewController")
         }
         compactVC.delegate = self
-        compactVC.variants = self.variants
+        compactVC.options = self.poll.options
         return compactVC
     }
     
@@ -66,6 +69,7 @@ class MessagesViewController: MSMessagesAppViewController {
             fatalError("Can't instantiate ExpandedViewController")
         }
         expandedVC.delegate = self
+        expandedVC.data = self.poll
         return expandedVC
     }
     
@@ -98,17 +102,22 @@ extension MessagesViewController: CompactViewControllerDelegate {
     fileprivate func composeMessage(with caption: String, session: MSSession? = nil) -> MSMessage {
         
         let layout = MSMessageTemplateLayout()
+        layout.image = #imageLiteral(resourceName: "poll")
         layout.caption = caption
         
         let message = MSMessage(session: session ?? MSSession())
         message.layout = layout
+        
+        var components = URLComponents()
+        components.queryItems = self.poll.queryItems
+        message.url = components.url!
         
         return message
     }
 }
 
 extension MessagesViewController: ExpandedViewControllerDelegate {
-    func variantsUpdated(variants: [String]) {
-        self.variants = variants
+    func pollUpdated(poll: PollEntity) {
+        self.poll = poll
     }
 }

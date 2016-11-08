@@ -16,18 +16,18 @@ protocol CompactViewControllerDelegate: class {
 class CompactViewController: UIViewController {
     @IBOutlet weak var actionButton: UIButton!
     
-    var variants: [String] = []
+    var options: [PollOption] = []
     weak var delegate: CompactViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let actionButtonTitle = self.variants.count > 0 ? "Send Poll" : "Create Poll"
+        let actionButtonTitle = self.options.count > 0 ? "Send Poll" : "Create Poll"
         self.actionButton.setTitle(actionButtonTitle, for: .normal)
     }
     
     @IBAction func actionButtonPressed(_ sender: AnyObject) {
-        if self.variants.count > 0 {
+        if self.options.count > 0 {
             self.delegate?.sendMessage()
         } else {
             self.delegate?.createPollPressed()

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ExpandedViewControllerDelegate: class {
-    func variantsUpdated(variants: [String])
+    func pollUpdated(poll: PollEntity)
 }
 
 class ExpandedViewController: UIViewController {
@@ -18,12 +18,12 @@ class ExpandedViewController: UIViewController {
     @IBOutlet weak var addNewVariant: UIButton!
     
     weak var delegate: ExpandedViewControllerDelegate?
-    var data: [String] = []
+    var data: PollEntity!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.changeViewsState(to: self.data.count == 0)
+        self.changeViewsState(to: self.data.options.count == 0)
     }
     
     @IBAction func addNewVariantPressed(_ sender: AnyObject) {
@@ -32,10 +32,10 @@ class ExpandedViewController: UIViewController {
     
     @IBAction func savePressed(_ sender: AnyObject) {
         guard let text = self.pollVariantTextField.text, text != "" else {return}
-        self.data.append(text)
+        self.data.options.append(PollOption(name: text))
         self.pollVariantTextField.text = ""
         self.tableView.reloadData()
-        self.delegate?.variantsUpdated(variants: self.data)
+        self.delegate?.pollUpdated(poll: self.data)
         self.changeViewsState(to: false)
     }
     
@@ -52,12 +52,12 @@ class ExpandedViewController: UIViewController {
 extension ExpandedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        return self.data.options.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Basic")!
-        cell.textLabel?.text = self.data[indexPath.row]
+        cell.textLabel?.text = self.data.options[indexPath.row].name
         return cell
     }
 }
